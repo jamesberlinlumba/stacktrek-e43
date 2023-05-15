@@ -1,12 +1,8 @@
 import { useState } from 'react';
 
-// import './App.css';
-
 function App() {
   const [todos, setTodos] = useState([]);
-  // const [filteredTodos, setFilteredTodos] = useState();
   const [newTodo, setNewTodo] = useState('');
-  // const [filteredTodoStatus, setFilteredTodoStatus] = useState();
   const [filter, setFilter] = useState('All');
 
   const handleAddTodo = () => {
@@ -34,7 +30,7 @@ function App() {
         filter !== 'All' ? todos.filter(item => item.completed === filter).map(todo =>
           <li key={todo.id}>
             <input type='checkBox' checked={todo.completed} onChange={() => { handleCheckbox(todo.id) }}
-            /> MAP {todo.task}  <button onClick={() => { handleDeleteTodo(todo.id) }}>x</button>
+            /> {todo.task}  <button onClick={() => { handleDeleteTodo(todo.id) }}>x</button>
           </li>) :
         todos.map(todo =>
           <li key={todo.id}>
